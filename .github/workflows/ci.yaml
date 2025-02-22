@@ -18,6 +18,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Cache golangci-lint
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/golangci-lint
+        key: golangci-lint.cache-${{ runner.os }}-${{ hashFiles('**/*.go') }}
+        restore-keys: |
+           golangci-lint.cache-${{ runner.os }}-
+
     - name: Checkout repository
       uses: actions/checkout@v4
 
