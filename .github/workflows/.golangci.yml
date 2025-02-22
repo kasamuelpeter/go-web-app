@@ -1,0 +1,5 @@
+linters:
+  disable:
+    - unused  # Disable the 'unused' linter that checks for unused variables, imports, etc.
+    - deadcode  # You can disable other linters you don't need
+  enable-all: true  # Enable all other linters that are not disabled
